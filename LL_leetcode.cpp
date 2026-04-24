@@ -31,3 +31,16 @@ ListNode* middleNode(ListNode* head) {
         }
         return slow;
     }
+//similar slow fast method to find whether linked list  have cycles are not 
+bool hasCycle(ListNode *head) {
+        ListNode* slow=head;
+        ListNode* fast=head;
+
+        while(fast!=NULL &&  fast->next!=NULL){
+            slow=slow->next;
+            fast=fast->next->next;
+            if(slow==fast)
+            return true;
+        }
+        return false;
+    }
